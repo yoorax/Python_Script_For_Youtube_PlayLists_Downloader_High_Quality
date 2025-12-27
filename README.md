@@ -69,6 +69,6 @@ This logic means: “Download the best available MP4 format with a maximum resol
 
 It ensures: High clarity for technical content & Proper audio-video merging
 
-License
+# License
 
 This project is intended for educational purposes and personal archiving of open courseware, particularly for people living in rural areas or regions with poor or unstable internet connections.
