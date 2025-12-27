@@ -42,19 +42,33 @@ Input 3: Name the folder where videos will be saved
 (the folder will be created automatically; only provide the desired name)
 
 ## How It Works (The Logic)
+
 The script operates in two distinct phases:
 
-Phase 1 – Extraction
-Uses extract_flat to quickly scrape playlist metadata without downloading large files, creating a persistent .txt list of video URLs.
+### Phase 1 – Extraction
 
-Phase 2 – Acquisition
-Iterates through the text file using the format selector:
+The script uses the extract_flat option from yt-dlp to quickly scrape playlist metadata without downloading video content.
+All video URLs are saved into a persistent .txt file.
+
+This allows:
+
+- Fast metadata extraction
+
+- Recovery if the download process is interrupted
+
+- Separation between scraping and downloading logic
+
+### Phase 2 – Acquisition
+
+The script reads the saved .txt file and downloads each video using the following format selector:
 
 ``` python
 best[ext=mp4][height<=1080]
 ```
-This logic acts as a filter:
-“Give me the best MP4 available.”
+This logic means: “Download the best available MP4 format with a maximum resolution of 1080p.”
+
+It ensures: High clarity for technical content & Proper audio-video merging
 
 License
-This project is for educational purposes and personal archiving of open courseware. For people in rural places with poor internet.
+
+This project is intended for educational purposes and personal archiving of open courseware, particularly for people living in rural areas or regions with poor or unstable internet connections.
