@@ -23,14 +23,15 @@ You need Python installed on your machine. The script relies on the `yt-dlp` lib
 
 ```bash
 pip install yt-dlp
+```
 Usage (Important Note!)
 Configure the Workspace
 Open the script and update the BASE_PATH variable to your desired download location:
 
-python
-Copy code
+```python
 BASE_PATH = r"C:\Users\YourName\Desktop\Your_Workspace"
-Follow the Prompts
+```
+### Follow the Prompts
 Input 1: Paste the YouTube Playlist URL
 (format should be https://www.youtube.com/playlist?list=...)
 
@@ -40,7 +41,7 @@ Input 2: Name the text file
 Input 3: Name the folder where videos will be saved
 (the folder will be created automatically; only provide the desired name)
 
-How It Works (The Logic)
+## How It Works (The Logic)
 The script operates in two distinct phases:
 
 Phase 1 – Extraction
@@ -49,9 +50,9 @@ Uses extract_flat to quickly scrape playlist metadata without downloading large 
 Phase 2 – Acquisition
 Iterates through the text file using the format selector:
 
-css
-Copy code
+``` python
 best[ext=mp4][height<=1080]
+```
 This logic acts as a filter:
 “Give me the best MP4 available.”
 
